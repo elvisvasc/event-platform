@@ -3,10 +3,10 @@ import { gql, useQuery } from '@apollo/client'
 
 const GET_LESSONS_QUERY = gql`
   query {
-    lessons(orderBy: availableAt_ASC, stage: PUBLISHED) {
+    lessons(orderBy: avaliableAt_ASC, stage: PUBLISHED) {
       id
       lessonType
-      availableAt
+      avaliableAt
       title
       slug
     }
@@ -39,8 +39,7 @@ export function Sidebar() {
               key={lesson.id}
               title={lesson.title}
               slug={lesson.slug}
-              // avaliableAt={new Date(lesson.avaliableAt)}
-              avaliableAt={new Date()}
+              avaliableAt={new Date(lesson.avaliableAt)}
               type={lesson.lessonType}
             />
           )
