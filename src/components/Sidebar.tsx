@@ -15,10 +15,10 @@ const GET_LESSONS_QUERY = gql`
 
 interface GetLessonQueryResponse {
   lessons: {
-    id: string;
-    title: string;
-    slug: string;
-    avaliableAt: string;
+    id: string
+    title: string
+    slug: string
+    avaliableAt: string
     lessonType: 'live' | 'class'
   }[]
 }
@@ -39,7 +39,8 @@ export function Sidebar() {
               key={lesson.id}
               title={lesson.title}
               slug={lesson.slug}
-              avaliableAt={new Date(lesson.avaliableAt)}
+              // avaliableAt={new Date(lesson.avaliableAt)}
+              avaliableAt={new Date()}
               type={lesson.lessonType}
             />
           )
